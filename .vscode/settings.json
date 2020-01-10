@@ -1,0 +1,23 @@
+{
+    "eslint.enable": true,
+    "eslint.options": {
+		"configFile": ".eslintrc",
+		"extensions": [".js"]
+	},
+	"eslint.lintTask.enable": true,
+	"eslint.validate": [
+        {
+            "language": "javascript",
+            "autoFix": true
+        }
+	],
+
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/Extension/manifest.json"
+            ],
+            "url": "http://json.schemastore.org/chrome-manifest"
+        }
+    ]
+}

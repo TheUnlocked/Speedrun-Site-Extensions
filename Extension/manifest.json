@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Speedrun Site Extensions",
+  "version": "1.0.0",
+
+  "icons": {"128": "Icons/icon.png"},
+
+  "description": "Extends speedrun.com leaderboards to provide more options for the user",
+
+  "author": "Unlocked",
+
+  "permissions": [
+    "https://speedrun.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://speedrun.com/*", "https://www.speedrun.com/*"],
+      "js": ["content.js"],
+      "css": ["contextmenu.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "content/*.js"
+  ]
+}

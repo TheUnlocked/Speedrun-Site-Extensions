@@ -1,0 +1,1 @@
+This is an extension for myself and a small group of others. It is only shared so that those who might find utility in it can also use it.

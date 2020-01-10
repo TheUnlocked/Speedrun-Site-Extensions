@@ -1,0 +1,35 @@
+.srse-ctxmenu {
+    position: absolute;
+    padding: 0.5em;
+    min-width: 100px;
+
+    font-family: system-ui,sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.75em;
+    box-shadow: 2px 2px 2px #222;
+}
+
+.srse-ctxmenu-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.srse-ctxmenu-item > span {
+    min-width: 10px;
+    flex: 0 1 auto;
+    margin: 0 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+    .srse-ctxmenu {
+        background-color: rgb(44, 44, 44);
+        color: #d8d8d8;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .srse-ctxmenu {
+        background-color: #d8d8d8;
+        color: #000;
+    }
+}
