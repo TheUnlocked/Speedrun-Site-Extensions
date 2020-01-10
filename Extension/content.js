@@ -21,9 +21,10 @@ const onLoad = async () => {
         document.querySelectorAll('#leaderboarddiv th').forEach((header, i) => {
             header.classList.add('srse-header');
             if (i < 3) return;
-            const values = [...leaderboardTable.children].slice(1).map(x => x.children[i + 1].childNodes[0]);
+            const values = [...leaderboardTable.children].slice(1).map(x => x.children[i + 1].childNodes[0]).map(x => x === undefined ? new Text("") : x);
             if (values.every(x => x instanceof Text) && !['Time'].find(x => header.innerText.includes(x))) {
-                const unqiueValues = [...new Set(values.map(x => x.wholeText.trim()))].sort();
+                const unqiueValues = [...new Set(values.map(x => x.wholeText.trim()))]
+                    .sort((a, b) => values.filter(x => b === x.wholeText.trim()).length - values.filter(x => a === x.wholeText.trim()).length);
 
                 headerOptions[header.innerText] = Object.fromEntries(unqiueValues.map(x => [x, true]));
 
@@ -61,7 +62,7 @@ const onLoad = async () => {
                             }
                         },
                         ...unqiueValues.map(x => ({
-                                header: makeMenuItem(headerOptions[header.innerText][x] ? '✓' : '', x),
+                                header: makeMenuItem(headerOptions[header.innerText][x] ? '✓' : '', x === "" ? "𝘕𝘰𝘯𝘦" : x),
                                 action: () => {
                                     headerOptions[header.innerText][x] = !headerOptions[header.innerText][x];
 
